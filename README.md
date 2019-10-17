@@ -65,6 +65,18 @@ I did start building these circuits, but after 13 very bright LEDs I realized th
 
 This excites me. Finally, a console! With input!
 
+To test how the serial port's console works with the Arduino, I wrote a short text RPG-style interaction based on 2001: A Space Odyssey. Try to convince HAL to open the airlock door.
+
+However there's still a mystery around how to get the Arduino to wait for user input on the Serial port. Originally I thought I could use an if with !value but that trick doesn't work so well with strings in C++ evidently, it just resolves to true. So I needed to add string validation to make sure the string is longer than 0 characters.
+
+This here helped a bit with creating a basic string validation.: https://www.arduino.cc/en/Tutorial/StringLength
+
+Which allowed the game to become somewhat playable. 
+
+I'm leaving as it is. There are issues around:
+1) Repeating text
+2) Input re-assignment
+
 ## Lab 02 - Potentiometers (Knobs)
 
 The potentiometer, AKA pot, is something I'm still wrapping my head around.
@@ -109,4 +121,4 @@ Why is it that way? Take for example, a mouseclick. A click opens a circuit, tel
 It's also important to note that this takes advantage of the Analog input pin.
 
 Click to view video.
-[![LDR VIDEO](https://github.com/Toruitas/pcomp-wk2/blob/master/fsr.JPG)](https://youtu.be/jNmjA7At94k "LDR VIDEO")
+[![FSR VIDEO](https://github.com/Toruitas/pcomp-wk2/blob/master/fsr.JPG)](https://youtu.be/jNmjA7At94k "FSR VIDEO")
